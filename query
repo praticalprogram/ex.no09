@@ -1,0 +1,14 @@
+DECLARE 
+a INT := 10;
+b INT := 0;
+answer INT;
+
+BEGIN
+answer := a/b;
+DBMS_OUTPUT.put_line('The result after division is ' || answer);
+EXCEPTION
+WHEN ZERO_DIVIDE THEN
+DBMS_OUTPUT.put_line('Divide by 0. Please check values again');
+DBMS_OUTPUT.put_line('a value: ' || a);
+DBMS_OUTPUT.put_line('b value: ' || b);
+END;
